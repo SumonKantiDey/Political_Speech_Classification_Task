@@ -1,0 +1,9 @@
+store_model/
+__pycache__/
+.ipynb_checkpoints/
+train_loss_his/
+logs/
+*.pyc
+.git.py 
+.DS_Store
+input/
