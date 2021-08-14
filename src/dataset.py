@@ -51,11 +51,11 @@ class TweetDataset:
 if __name__ == "__main__":
     df = pd.read_csv(args.training_file).dropna().reset_index(drop = True)
     dset = TweetDataset(
-        tweet=df.tweet.values,
-        targets=df.target.values
+        tweet=df.text.values,
+        targets=df.immigration.values
         )
-    print(df.iloc[1]['tweet'])
-    #print(dset[1])
-    tokenizer = AutoTokenizer.from_pretrained(args.pretrained_model_name, do_lower_case=args.do_lower_case)
-    print(tokenizer.tokenize(df.iloc[1]['tweet']))
-    print(tokenizer.convert_tokens_to_ids(tokenizer.tokenize(df.iloc[1]['tweet'])))
+    print(df.iloc[1]['text'])
+    print(dset[1])
+    # tokenizer = AutoTokenizer.from_pretrained(args.pretrained_model_name, do_lower_case=args.do_lower_case)
+    # print(tokenizer.tokenize(df.iloc[1]['tweet']))
+    # print(tokenizer.convert_tokens_to_ids(tokenizer.tokenize(df.iloc[1]['tweet'])))

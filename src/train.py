@@ -27,14 +27,25 @@ logger = get_module_logger(__name__)
 
 
 def run():
-    df_train = pd.read_csv(args.training_file).dropna().reset_index(drop=True)
-    df_valid = pd.read_csv(args.validation_file).dropna().reset_index(drop=True)
-    df_train = df_train.sample(frac=1).reset_index(drop=True)
+    dfx = pd.read_csv(args.training_file).dropna().reset_index(drop=True)
+    df_train, df_valid = model_selection.train_test_split(
+        dfx, 
+        test_size=0.15, 
+        random_state=args.seed, 
+        stratify=dfx.immigration.values
+    )
+    df_train = df_train.reset_index(drop=True)
+    df_valid = df_valid.reset_index(drop=True)
     logger.info("train len - {} valid len - {}".format(len(df_train), len(df_valid)))
 
+    df_train = utils.data_chunking(df_train)
+    df_valid = utils.data_chunking(df_valid)
+
+    logger.info("after spliting train len - {} valid len - {}".format(len(df_train), len(df_valid)))
+
     train_dataset = TweetDataset(
-        tweet=df_train.clean_tweet.values,
-        targets=df_train.target.values
+        tweet=df_train.text.values,
+        targets=df_train.immigration.values
     )
 
     train_data_loader = torch.utils.data.DataLoader(
@@ -45,8 +56,8 @@ def run():
     )
 
     valid_dataset = TweetDataset(
-        tweet=df_valid.clean_tweet.values,
-        targets=df_valid.target.values
+        tweet=df_valid.text.values,
+        targets=df_valid.immigration.values
     )
 
     valid_data_loader = torch.utils.data.DataLoader(

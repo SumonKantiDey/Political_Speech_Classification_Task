@@ -44,6 +44,40 @@ class AverageMeter:
         self.count += n
         self.avg = self.sum / self.count
 
+#Splitting the Data into smaller chunks¶
+def get_split(text1):
+    l_total = []
+    l_parcial = []
+    if len(text1.split())//150 >0:
+        n = len(text1.split())//150
+    else: 
+        n = 1
+    for w in range(n):
+        if w == 0:
+            l_parcial = text1.split()[:200]
+            l_total.append(" ".join(l_parcial))
+        else:
+            l_parcial = text1.split()[w*150:w*150 + 200]
+            l_total.append(" ".join(l_parcial))
+    return l_total
+
+
+def data_chunking(df):
+    df['text_split'] = df['text'].apply(get_split)
+    text_l = []
+    label_l = []
+    index_l =[]
+    for idx,row in df.iterrows():
+        for l in row['text_split']:
+            text_l.append(l)
+            label_l.append(row['immigration'])
+            index_l.append(idx)
+            
+    dataframe = pd.DataFrame({'text':text_l, 'immigration':label_l})
+    dataframe['text_len'] = dataframe['text'].astype(str).apply(len)
+    dataframe['text_word_count'] = dataframe['text'].apply(lambda x: len(str(x).split()))
+    return dataframe
+
 class EarlyStopping:
     def __init__(self, patience=7, mode="max", delta=0.001):
         self.patience = patience

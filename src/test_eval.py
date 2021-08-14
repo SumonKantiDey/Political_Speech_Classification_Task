@@ -25,8 +25,8 @@ def test_evaluation(model, device):
     dfx = pd.read_csv(args.testing_file).dropna().reset_index(drop=True)
     dfx['target'] = 0
     test_dataset = TweetDataset(
-        tweet=dfx.clean_tweet.values,
-        targets=dfx.target.values
+        tweet=dfx.text.values,
+        targets=dfx.immigration.values
     )
 
     test_data_loader = torch.utils.data.DataLoader(
@@ -42,8 +42,8 @@ def test_evaluation(model, device):
     y_pred = get_predictions(test_data_loader, model, device)
 
     dfx['y_pred'] = y_pred
-    pred_test = dfx[['id','tweet','y_pred']]
+    pred_test = dfx[['id','text','immigration','y_pred']]
     
-    pred_test.to_csv(f'../roberta-large/output/{args.output}',index = False)
+    pred_test.to_csv(f'../src/output/{args.output}',index = False)
 if __name__ == "__main__":
     test_evaluation()

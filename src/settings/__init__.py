@@ -6,9 +6,9 @@ import requests
 import multiprocessing_logging
 
 # LOGGER's
-LOGGER_DEBUG_FILE = '/content/drive/My Drive/COVID19 Fake News Detection in English/roberta-large/logs/debug.log'
-LOGGER_INFO_FILE = '/content/drive/My Drive/COVID19 Fake News Detection in English/roberta-large/logs/info.log'
-LOGGER_ERROR_FILE = '/content/drive/My Drive/COVID19 Fake News Detection in English/roberta-large/logs/error.log'
+LOGGER_DEBUG_FILE = '../src/logs/debug.log'
+LOGGER_INFO_FILE = '../src/logs/info.log'
+LOGGER_ERROR_FILE = '../src/logs/error.log'
 lb_logging_mode = "development"
 
 

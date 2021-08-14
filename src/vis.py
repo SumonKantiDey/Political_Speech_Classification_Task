@@ -9,7 +9,7 @@ def display_acc_curves(history, title):
     plt.xlabel('Epoch')
     plt.legend()
     plt.ylim([0, 1])
-    plt.savefig(f'../covid-twitter-bert/train_loss_his/{title}.png')
+    plt.savefig(f'../Political_Speech_Classification_Task/train_loss_his/{title}.png')
     plt.show()
 
 def display_loss_curves(history, title):
@@ -20,4 +20,4 @@ def display_loss_curves(history, title):
     plt.xlabel('Epoch')
     plt.legend()
     plt.ylim([0, 1])
-    plt.savefig(f'../covid-twitter-bert/train_loss_his/{title}.png')
+    plt.savefig(f'../Political_Speech_Classification_Task/train_loss_his/{title}.png')
