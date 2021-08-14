@@ -31,3 +31,5 @@ $ pip install -r requirements.txt
 # Reference
 1. Pappagari, Raghavendra, et al. "Hierarchical transformers for long document classification." 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU). IEEE, 2019.
 2. Ding, Ming, et al. "Cogltx: Applying bert to long texts." Advances in Neural Information Processing Systems 33 (2020): 12792-12804.
+
+#  <span style="color: red"> THE WORK IS IN PROGRESS </span>
