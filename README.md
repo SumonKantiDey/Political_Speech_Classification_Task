@@ -9,14 +9,23 @@
 ~~~
 
 #### Dataset ####
-I have got two dataset dat_speeches1 contains **42540** samples and dat_speeches1 contains **34354** samples. From those data total label data distribution given below.
+I have got two dataset dat_speeches1 contains **42540** samples and dat_speeches2 contains **34354** samples. From those data total label data distribution given below.
 | type  | # of examples | 
 | ---       |---     |
 |immigration| 1126|
 |not immigration| 874|
 | Total | 2000
+Then, we split the samples into train (1600), validation (200), test (200) sets.
 
 Total unseen samples without label is **74894**.
+
+### Code usage instructions ### 
+First clone this repo and move to the directory. Then, install necessary libraries. Also, following commands can be used: 
+~~~
+$ git clone https://github.com/SumonKantiDey/Political_Speech_Classification_Task.git
+$ cd Political_Speech_Classification_Task/ 
+$ pip install -r requirements.txt
+~~~
 
 
 # Reference
