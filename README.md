@@ -3,19 +3,12 @@ The goal of this project is to finetune a transformer model that identifies poli
 
 #### Folder structure ####	
 ~~~
+data_merge.py       --> Used to merge the dataset based on doc id.
 ./input             --> Contains the dataset related files.
 ./preprocess  	    --> Contains the codes for preprocessing the dataset.	
 ./results           --> Contain the evaluation result based on test dataset.
 ./src               --> Contains the codes for all transformer-based classifiers.
 ~~~
-### Parameters ####
-```
-Learning-rate = 2e-5,3e-5]
-Epochs = [2,4,5]
-Max seq length = [128 192 200]
-Dropout = [0.1 0.2 0.3]
-Batch size = [8,16]
-```
 #### Dataset ####
 I have got two dataset dat_speeches1 contains **42540** samples and dat_speeches2 contains **34354** samples. From those data total label data distribution given below.
 | type  | # of examples | 
@@ -34,6 +27,16 @@ $ git clone https://github.com/SumonKantiDey/Political_Speech_Classification_Tas
 $ cd Political_Speech_Classification_Task/ 
 $ pip install -r requirements.txt
 ~~~
+
+### Parameters ####
+```
+Learning-rate = 2e-5,3e-5]
+Epochs = [2,4,5]
+Max seq length = [128 192 200]
+Dropout = [0.1 0.2 0.3]
+Batch size = [8,16]
+```
+
 ### Results ###
 Standalone RoBERTa-base result base on test data.
 Please note the following class encoding to interprete the class-specific classification reports:
