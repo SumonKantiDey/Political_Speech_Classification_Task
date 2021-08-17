@@ -31,5 +31,6 @@ $ pip install -r requirements.txt
 # Reference
 1. Pappagari, Raghavendra, et al. "Hierarchical transformers for long document classification." 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU). IEEE, 2019.
 2. Ding, Ming, et al. "Cogltx: Applying bert to long texts." Advances in Neural Information Processing Systems 33 (2020): 12792-12804.
+3. Chicco, Davide, and Giuseppe Jurman. "The advantages of the Matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation." BMC genomics 21.1 (2020): 1-13.
 
 #  <span style="color: red"> THE WORK IS IN PROGRESS </span>
