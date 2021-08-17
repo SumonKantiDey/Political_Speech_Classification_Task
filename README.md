@@ -16,6 +16,7 @@ I have got two dataset dat_speeches1 contains **42540** samples and dat_speeches
 |immigration| 1126|
 |not immigration| 874|
 | Total | 2000
+
 Then, we split the samples into train (1600), validation (200), test (200) sets.
 
 Total unseen samples without label is **74894**.
